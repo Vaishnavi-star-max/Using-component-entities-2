@@ -1,26 +1,13 @@
-import React, { useState } from 'react';
-
-const LikeButton = () => {
-  const [liked, setLiked] = useState(false);
-
-  const toggleLike = () => {
-    setLiked(!liked);
-  };
-
+import React from 'react'
+function Likebutton(props) {
   return (
-    <button 
-      onClick={toggleLike} 
-      style={{ 
-        backgroundColor: liked ? 'red' : 'gray', 
-        color: 'white', 
-        border: 'none', 
-        padding: '10px', 
-        cursor: 'pointer' 
-      }}
-    >
-      {liked ? 'Unlike' : 'Like'}
+    <>
+    <button onClick={props.Likebutton} className={props.likeStyle? "liked":""} >
+      {props.likeStyle ? "liked":"like"}
     </button>
-  );
-};
+    
+    </>
+  )
+}
 
-export default LikeButton;
+export default Likebutton
